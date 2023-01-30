@@ -1,0 +1,8 @@
+
+<?php 
+$cnn=mysqli_connect('localhost','root','','dream_dresser_db');
+$did=$_GET['del'];
+$qry="delete from category_tbl where category_tbl1id=".$did;
+mysqli_query($cnn,$qry);
+header('location:cat_list.php');
+?>
