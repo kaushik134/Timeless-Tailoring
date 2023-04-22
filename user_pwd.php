@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<?php 
+<?php
 session_start();
 require_once "connect.php";
-if(!isset($_SESSION['uid']))
-{
+if (!isset($_SESSION['uid'])) {
 	header('location:login.php');
 }
 
@@ -20,7 +19,7 @@ Version: 1.0.0
 <!-- <![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-	<title>Checkout | <?php echo $title;?></title>
+	<title>Checkout | <?php echo $title; ?></title>
 	<meta charset="utf-8" />
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<meta name="description" content="Tailor Html Template" />
@@ -52,45 +51,39 @@ Version: 1.0.0
 <!-- breadcrumb section start -->
 
 <!-- breadcrumb section End -->
-<!-- Mens section Start -->
+<!-- womens section Start -->
 <?php
-	if(isset($_POST['stbn'])){
-  $qury=mysqli_query($cnn,"select * from customer_tbl where customer_id='".$_SESSION['uid']."'");
-  $row=mysqli_fetch_assoc($qury);
-  
-   if($_POST['cpwd']==$row['password'])
-   {   
-		if($_POST['rpwd']==$_POST['npwd'])
-		{
-        $qury=mysqli_query($cnn,"update customer_tbl set password='".$_POST['npwd']."' where customer_id='".$_SESSION['uid']."'");
-		echo "<script>window.location.href='index.php'</script>";
-		}
-		else
-		{
+if (isset($_POST['stbn'])) {
+	$qury = mysqli_query($cnn, "select * from customer_tbl where customer_id='" . $_SESSION['uid'] . "'");
+	$row = mysqli_fetch_assoc($qury);
+
+	if ($_POST['cpwd'] == $row['password']) {
+		if ($_POST['rpwd'] == $_POST['npwd']) {
+			$qury = mysqli_query($cnn, "update customer_tbl set password='" . $_POST['npwd'] . "' where customer_id='" . $_SESSION['uid'] . "'");
+			echo "<script>window.location.href='index.php'</script>";
+		} else {
 			?>
-         <script>
-				swal({
-				title: "OOPS!",
-				text: "please enter new password and repeat password are same!!!",
-				icon: "warning",
-				});
-          </script>
-		<?php
+					 <script>
+							swal({
+							title: "OOPS!",
+							text: "please enter new password and repeat password are same!!!",
+							icon: "warning",
+							});
+					  </script>
+					<?php
 		}
+	} else {
+		?>
+				 <script>
+						swal({
+						title: "OOPS!",
+						text: "Incorrect current password!!!",
+						icon: "warning",
+						});
+				  </script>
+				<?php
 	}
-   else
-   {
-     ?>
-         <script>
-				swal({
-				title: "OOPS!",
-				text: "Incorrect current password!!!",
-				icon: "warning",
-				});
-          </script>
-		<?php
-   }
- }
+}
 
 ?>
 <div class="main_section section_07 tl_checkout_wrapper">
@@ -126,11 +119,11 @@ Version: 1.0.0
 							</div>
 							<br><br><br>
 									<input type="submit" 
-                                        class="btn btn-primary" 
+										class="btn btn-primary" 
 										style="margin-left:800px"
-                                        name="stbn" 
-                                        value="Submit">
-                                    
+										name="stbn" 
+										value="Submit">
+									
 						  
 							</form>
 						</div>
@@ -144,7 +137,7 @@ Version: 1.0.0
 		</div>
 	</div>
 </div>
-<!-- Mens section End -->
+<!-- womens section End -->
 <!-- Footer Start -->
 <?php include_once "footer.php"; ?>
 <!-- Footer End -->
@@ -195,64 +188,64 @@ Version: 1.0.0
 <script src="admin/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
 
 <script type="text/javascript">
-      $(document).ready(function() {
-          $("#custom_val").validate({
-                rules: {
+	  $(document).ready(function() {
+		  $("#custom_val").validate({
+				rules: {
 					
 					cpwd: {
-                        required: true,
-                        minlength :5,
-                        maxlength: 15
-                    },
+						required: true,
+						minlength :5,
+						maxlength: 15
+					},
 					npwd: {
-                         required: true,
-                        minlength :5,
-                        maxlength: 15
-                    },
-                    rpwd: {
-                        required: true,
-                        minlength :5,
-                        maxlength: 15
-                    },
-                  
+						 required: true,
+						minlength :5,
+						maxlength: 15
+					},
+					rpwd: {
+						required: true,
+						minlength :5,
+						maxlength: 15
+					},
+				  
 					}
-                });
-                messages : {
-                      name: {
-                      required: "Name should be at least 3 characters"
-                    }
-                }
-         
-          });
-      
+				});
+				messages : {
+					  name: {
+					  required: "Name should be at least 3 characters"
+					}
+				}
+		 
+		  });
+	  
 			jQuery.validator.addMethod("lettersonly", function(value, element) {
-			        return this.optional(element) || /^[a-z\s]+$/i.test(value);
-			    }, "Only alphabetical characters");
+					return this.optional(element) || /^[a-z\s]+$/i.test(value);
+				}, "Only alphabetical characters");
 				
 				jQuery.validator.addMethod("numbersonly", function(value, element) {
-			        return this.optional(element) || /^[0-9]+$/.test(value);
-			    }, "Only postive digits");
+					return this.optional(element) || /^[0-9]+$/.test(value);
+				}, "Only postive digits");
 	 
-      jQuery.extend(jQuery.validator.messages, {
-          required: "This field is required.",
-          // remote: "Please fix this field.",
-           email: "Please enter a valid email address.",
-          // url: "Please enter a valid URL.",
-          // date: "Please enter a valid date.",
-          // dateISO: "Please enter a valid date (ISO).",
-          // number: "Please enter a valid number.",
-          // digits: "Please enter only digits.",
-          // creditcard: "Please enter a valid credit card number.",
-          // equalTo: "Please enter the same value again.",
-          //accept: "please enter valid image file type (png,jpg,jpeg).",
-          // maxlength: jQuery.validator.format("Please enter no more than {0} characters."),
-          // minlength: jQuery.validator.format("Please enter at least {0} characters."),
-          // rangelength: jQuery.validator.format("Please enter a value between {0} and {1} characters long."),
-          // range: jQuery.validator.format("Please enter a value between {0} and {1}."),
-          // max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
-          // min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
-      });
-    </script>
+	  jQuery.extend(jQuery.validator.messages, {
+		  required: "This field is required.",
+		  // remote: "Please fix this field.",
+		   email: "Please enter a valid email address.",
+		  // url: "Please enter a valid URL.",
+		  // date: "Please enter a valid date.",
+		  // dateISO: "Please enter a valid date (ISO).",
+		  // number: "Please enter a valid number.",
+		  // digits: "Please enter only digits.",
+		  // creditcard: "Please enter a valid credit card number.",
+		  // equalTo: "Please enter the same value again.",
+		  //accept: "please enter valid image file type (png,jpg,jpeg).",
+		  // maxlength: jQuery.validator.format("Please enter no more than {0} characters."),
+		  // minlength: jQuery.validator.format("Please enter at least {0} characters."),
+		  // rangelength: jQuery.validator.format("Please enter a value between {0} and {1} characters long."),
+		  // range: jQuery.validator.format("Please enter a value between {0} and {1}."),
+		  // max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
+		  // min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
+	  });
+	</script>
 </body>
 <!--body end -->
 </html>

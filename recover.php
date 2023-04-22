@@ -5,6 +5,7 @@ require_once('connect.php');
 
 ?>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -40,35 +41,37 @@ require_once('connect.php');
     <title>Recover Password</title>
 
 </head>
+
 <body class="bg-white">
 
-<?php
-    if(isset($_POST['sbtn']))
-    {  
-    $qry="select * from customer_tbl where email='".$_POST['uid']."'";
-    //echo $qry;die;
-     $result=mysqli_query($cnn,$qry);
-     if(mysqli_num_rows($result)>0)
-     {
-        $_SESSION['mail']=$_POST['uid'];
-        $otp=rand(100000,999999);
-        $time=time();
-        $status=1;
-        
-        require 'phpmailer/PHPMailerAutoload.php';
-        require 'phpmailer/class.phpmailer.php';
-        $data=mysqli_fetch_array($result);
-        $_SESSION['user_name_data']=$data['customer_name'];
-        $otp=rand(100000,999999);
-        $_SESSION['random_otp']=$otp;
-        //$to_id = $_POST['toid'];
-        //$_SESSION['forget_email']=$uid;
-        $uid=$_POST['uid'];
-        $subject = "Forget Password";
-        $setfrom="Timeless Tailoring";
-        
-        // Retrieve the email template required
-        $message = '
+    <?php
+    if (isset($_POST['sbtn'])) {
+        $qry = "select * from customer_tbl where email='" . $_POST['uid'] . "'";
+        //echo $qry;die;
+        $result = mysqli_query($cnn, $qry);
+        if (mysqli_num_rows($result) > 0) {
+            $_SESSION['mail'] = $_POST['uid'];
+            $otp = rand(100000, 999999);
+            $time = time();
+            $status = 1;
+
+            // require 'PHPMailer/PHPMailerAutoload.php';
+            // require 'PHPMailer/class.phpmailer.php';
+
+            require_once("PHPMailer\PHPMailerAutoload.php");
+            require_once("PHPMailer\class.phpmailer.php");
+            $data = mysqli_fetch_array($result);
+            $_SESSION['user_name_data'] = $data['customer_name'];
+            $otp = rand(100000, 999999);
+            $_SESSION['random_otp'] = $otp;
+            //$to_id = $_POST['toid'];
+            //$_SESSION['forget_email']=$uid;
+            $uid = $_POST['uid'];
+            $subject = "Forget Password";
+            $setfrom = "Timeless Tailoring";
+
+            // Retrieve the email template required
+            $message = '
                     <html>
                     <head>
                     <title>HTML email</title>
@@ -86,12 +89,12 @@ require_once('connect.php');
                       
                       <div class="c-email__content">
                         <p style="font-size:14px;font-family:roboto;color:#383838;font-weight:bold;">
-                          Dear '.$_SESSION['user_name_data'].',</p>
+                          Dear ' . $_SESSION['user_name_data'] . ',</p>
 
                         <o>You have requested to recover your password for online access to our website. We have generated a One - Time Passcode for you which will verify that you have requested access. This One - Time Passcode is time sensitive and valid for a single use.</o><br>
 
                         <div class="c-email__code" style="text-align:center;margin-top:10px;margin-bottom:10px">
-                          <span style="font-size:15px;font-family:roboto;color:#388080;font-weight:bold;">'.$_SESSION['random_otp'].'</span>
+                          <span style="font-size:15px;font-family:roboto;color:#388080;font-weight:bold;">' . $_SESSION['random_otp'] . '</span>
                         </div>
                       </div>
                      
@@ -108,57 +111,69 @@ require_once('connect.php');
                     </body>
                     </html>
             ';
-            $mail = new PHPMailer();
-        
-            $mail->isSMTP();
-            //$mail->SMTPDebug = 2;
-            $mail->Host = 'smtp.gmail.com';
-            $mail -> SMTPSecure = 'tls';
-            $mail -> SMTPAuth = true;
-            $mail->CharSet = "UTF-8";
-            $mail->Port = 587;
-            $mail->Username   = 'dreamedu17@gmail.com';
-            $mail->Password   = 'dreamedu@123';
-            $mail->FromName = $setfrom;
-            $mail->addAddress($uid);
-            $mail->Subject = $subject;
-            $mail->msgHTML($message);
-            if($mail->send())
-            {
-                $str="insert into otp_status_tbl values(NULL,'".$otp."','".$status."','".$time."')";
+            // $mail = new PHPMailer();
+
+            // $mail->isSMTP();
+            // //$mail->SMTPDebug = 2;
+            // $mail->Host = 'smtp.gmail.com';
+            // $mail->SMTPSecure = 'tls';
+            // $mail->SMTPAuth = true;
+            // $mail->CharSet = "UTF-8";
+            // $mail->Port = 587;
+            // $mail->Username = 'dreamedu17@gmail.com';
+            // $mail->Password = 'dreamedu@123';
+            // $mail->FromName = $setfrom;
+            // $mail->addAddress($uid);
+            // $mail->Subject = $subject;
+            // $mail->msgHTML($message);
+            // if ($mail->send()) {
+            $Correo = new PHPMailer();
+            $Correo->IsSMTP();
+            $Correo->SMTPAuth = true;
+            $Correo->SMTPSecure = "tls";
+            $Correo->Host = "smtp.gmail.com";
+            $Correo->Port = 587;
+            $Correo->Username = "foo@gmail.com";
+            $Correo->Password = "gmailpassword";
+            $Correo->SetFrom('foo@gmail.com', 'De Yo');
+            $Correo->FromName = "From";
+            $Correo->AddAddress("bar@hotmail.com");
+            $Correo->Subject = "Prueba con PHPMailer";
+            $Correo->Body = "<H3>Bienvenido! Esto Funciona!</H3>";
+            $Correo->IsHTML(true);
+            if ($Correo->Send()) {
+                $str = "insert into otp_status_tbl values(NULL,'" . $otp . "','" . $status . "','" . $time . "')";
                 // echo $str;die;
-                $sucess=mysqli_query($cnn,$str);
-                if($sucess)
-                {
-                ?> 
+                $sucess = mysqli_query($cnn, $str);
+                if ($sucess) {
+    ?>
                     <script>
                         swal({
-                              title: 'Good Job',
-                              text: 'OTP send sucessfully.please check your email',
-                              icon: "success",
-                            }).then(function() {
-                                window.location.href = "verify_code.php";
-                            })
+                            title: 'Good Job',
+                            text: 'OTP send sucessfully.please check your email',
+                            icon: "success",
+                        }).then(function() {
+                            window.location.href = "verify_code.php";
+                        })
                     </script>
 
                     <!-- echo ("<script>window.alert('OTP send sucessfully.please check your email') ; window.location.href='code.php'; </script>"); -->
-                    <?php
+            <?php
                     //header('location:code.php');
                 }
-            }  
-     }
-    else
-    {
-    ?>
-    <script>
-        swal({
-        title: "OOPS!",
-        text: "Incorrect mail",
-        icon: "error",
-        //button: "Aww yiss!",
-        });
-    </script>
-<?php } } ?>
+            }
+        } else {
+            ?>
+            <script>
+                swal({
+                    title: "OOPS!",
+                    text: "Incorrect mail",
+                    icon: "error",
+                    //button: "Aww yiss!",
+                });
+            </script>
+    <?php }
+    } ?>
 
 
 
@@ -189,7 +204,7 @@ require_once('connect.php');
                             Email
                         </label>
                         <input type="email" class="form-control" id="modalForgotpasswordEmail1" name="uid" placeholder="johndoe@creativelayers.com">
-                         <label id="modalSigninPassword1-error" class="error" for="modalForgotpasswordEmail1" style="color: red;"></label>
+                        <label id="modalSigninPassword1-error" class="error" for="modalForgotpasswordEmail1" style="color: red;"></label>
                     </div>
 
                     <!-- Submit -->
@@ -241,23 +256,23 @@ require_once('connect.php');
     <script src="./assets/js/theme.min.js"></script>
     <script src="app-assets/js/scripts/forms/validation/form-validation.js"></script>
 
-<script>
-      $('#custom_val').validate({
-        rules: {
-          uid: 'required',
-      },
-      messages: {
-         uid: "Email id is Required",
-     },
-     
-      submitHandler: function(form) {
-        form.submit();
-      }
-      });
-      jQuery.validator.addMethod("lettersonly", function(value, element) {
-        return this.optional(element) || /^[a-z]+$/i.test(value);
-      }, "Please Enter Email Name in Characters Only"); 
-     
+    <script>
+        $('#custom_val').validate({
+            rules: {
+                uid: 'required',
+            },
+            messages: {
+                uid: "Email id is Required",
+            },
+
+            submitHandler: function(form) {
+                form.submit();
+            }
+        });
+        jQuery.validator.addMethod("lettersonly", function(value, element) {
+            return this.optional(element) || /^[a-z]+$/i.test(value);
+        }, "Please Enter Email Name in Characters Only");
     </script>
 </body>
+
 </html>

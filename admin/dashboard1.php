@@ -634,11 +634,11 @@
     <div class="card-header border-bottom p-0">
       <div class="media m-75">
         <a href="JavaScript:void(0);">
-          <div class="avatar mr-75">
+          <!-- <div class="avatar mr-75">
             <img src="app-assets/images/portrait/small/avatar-s-2.jpg" alt="avtar images" width="32"
               height="32">
             <span class="avatar-status-online"></span>
-          </div>
+          </div> -->
         </a>
         <div class="media-body">
           <h6 class="media-heading mb-0 pt-25"><a href="javaScript:void(0);">Kiara Cruiser</a></h6>

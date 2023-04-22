@@ -1,27 +1,25 @@
 <!DOCTYPE html>
-<?php 
+<?php
 session_start();
 require_once "connect.php";
-	$qry1="select * from customer_tbl";
-	$result=mysqli_query($cnn,$qry1);
-	$cname='';
-	 if(!empty($_GET['my_id']))
-	 {
-		 $my_id=$_GET['my_id'];
-		  
-		  $str1="select * from customer_tbl";
-		  $result1=mysqli_query($cnn,$str1);
-		  $str2="select * from customer_tbl where customer_id=".$_GET['my_id'];
-	      $result=mysqli_query($cnn,$str2);
-		  $res=mysqli_fetch_array($result);
-		 
-		  $cname=$res['customer_name'];
-		 
-	  }
-if(!isset($_SESSION['uid']))
-   {
-    header('location:index.php');
-   }
+$qry1 = "select * from customer_tbl";
+$result = mysqli_query($cnn, $qry1);
+$cname = '';
+if (!empty($_GET['my_id'])) {
+	$my_id = $_GET['my_id'];
+
+	$str1 = "select * from customer_tbl";
+	$result1 = mysqli_query($cnn, $str1);
+	$str2 = "select * from customer_tbl where customer_id=" . $_GET['my_id'];
+	$result = mysqli_query($cnn, $str2);
+	$res = mysqli_fetch_array($result);
+
+	$cname = $res['customer_name'];
+
+}
+if (!isset($_SESSION['uid'])) {
+	header('location:index.php');
+}
 
 ?>
 <!-- 
@@ -35,7 +33,7 @@ Version: 1.0.0
 <!-- <![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-	<title>Checkout | <?php echo $title;?></title>
+	<title>Checkout | <?php echo $title; ?></title>
 	<meta charset="utf-8" />
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<meta name="description" content="Tailor Html Template" />
@@ -93,7 +91,7 @@ Version: 1.0.0
 	</div>
 </div>
 <!-- breadcrumb section End -->
-<!-- Mens section Start -->
+<!-- womens section Start -->
 <div class="main_section section_07 tl_checkout_wrapper">
 	<div class="container">
 		<div class="row">
@@ -135,12 +133,12 @@ Version: 1.0.0
 						//$_SESSION['cart_total']=200;
 						?>
 						
-						<!--	<a  class="buy_now tg-btn tg-btnstartcustomizing" href="index.php"  data-amount="<?php echo $_SESSION['cart_total'];?>" data-id="" style="text-decoration: none;" style="display:none"  id="online_pay">Pay Now </a>
+						<!--	<a  class="buy_now tg-btn tg-btnstartcustomizing" href="index.php"  data-amount="<?php echo $_SESSION['cart_total']; ?>" data-id="" style="text-decoration: none;" style="display:none"  id="online_pay">Pay Now </a>
 						 <a onclick="Please login First" href="payment-proccess_cash.php" class="btn btn-outline-primary" style="display:none" id="cash_pay">Pay now</a>
 						-->
 					
 						 <a  class="buy_now t_btn tg-btnstartcustomizing" href="index.php"  
-						 data-amount="<?php echo $_SESSION['cart_total'];?>" data-id="" style="text-decoration: none;" 
+						 data-amount="<?php echo $_SESSION['cart_total']; ?>" data-id="" style="text-decoration: none;" 
 						 style="display:none"  id="online_pay">Pay Now </a> 	
 						<a  onclick="Please login First" href="payment-proccess_cash.php" class="t_btn next"  
 						 style="display:none"  id="cash_pay">Pay Now </a> 	
@@ -159,7 +157,7 @@ Version: 1.0.0
 <br>
 <br>
 <br>
-<!-- Mens section End -->
+<!-- womens section End -->
 <!-- Footer Start -->
 <?php include_once "footer.php"; ?>
 <!-- Footer End -->
@@ -210,29 +208,29 @@ Version: 1.0.0
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
 $('body').on('click', '.buy_now', function(e){
-    var totalAmount = $(this).attr("data-amount");
-    //alert(totalAmount);
-    //var product_id =  $(this).attr("data-id");
-    //alert(product_id);
-    var options = {
-    "key": "rzp_test_TPaS0mhcHBSjSV",
-    "amount": (totalAmount*100), // 2000 paise = INR 20
-    "name": "Thread smith",
-    "description": "Payment",
-    "image": "../img/product/12347_ivana-squares.jpg",
-    "handler": function (response){
-        //alert(response);
+	var totalAmount = $(this).attr("data-amount");
+	//alert(totalAmount);
+	//var product_id =  $(this).attr("data-id");
+	//alert(product_id);
+	var options = {
+	"key": "rzp_test_TPaS0mhcHBSjSV",
+	"amount": (totalAmount*100), // 2000 paise = INR 20
+	"name": "Timeless Tailoring",
+	"description": "Payment",
+	"image": "../img/product/12347_ivana-squares.jpg",
+	"handler": function (response){
+		//alert(response);
 $.ajax({
-    url: 'payment-proccess.php',
-    type: 'post',
-    //data: {cart:product_id},
-    data: {
-            razorpay_payment_id: response.razorpay_payment_id , 
-            totalAmount : totalAmount ,
-            //product_id : product_id,
-    }, 
+	url: 'payment-proccess.php',
+	type: 'post',
+	//data: {cart:product_id},
+	data: {
+			razorpay_payment_id: response.razorpay_payment_id , 
+			totalAmount : totalAmount ,
+			//product_id : product_id,
+	}, 
 success: function (msg) {
-window.location.href = 'http://localhost/tt/website/index.php';
+window.location.href = 'http://localhost/website/index.php';
 }
 });
 },

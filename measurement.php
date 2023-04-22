@@ -149,7 +149,7 @@ Version: 1.0.0
 				
 <?php 
 		} 
-		if($data['category_name']=='blouse')
+		if($data['category_name']=='top and bottom')
 		{		
 ?>
 

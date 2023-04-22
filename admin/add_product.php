@@ -26,7 +26,7 @@
     {
       $cat_status=1;  
       $qry2="insert into product_tbl values(NULL,'".$_POST['product_name']."','".$_POST['cat']."','".$_POST['optradio']."','".$_POST['price']."') ";
-      //echo $qry2; die;
+      // echo $qry2; die;
       mysqli_query($cnn,$qry2);
       echo "<h2>Data Inserted..</h2>";
     }

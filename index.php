@@ -192,7 +192,7 @@ As an extension of our service, we are offering the most skilled, reliable onlin
 			<div class="col-md-3 col-sm-4 col-xs-12 w-100 wow fadeInUp" data-wow-delay="0.1s">
 				<div class="fea_box ">
 					<div class="fea_box_img">
-						<a href="" class="fea_overlay"><img src="images/feature/blouse-stitching-265x364.jpg" alt="tailor-feature-1"  class="img-responsive" /></a>
+						<a href="" class="fea_overlay"><img src="images/feature/shirt.jpg" alt="tailor-feature-1"  class="img-responsive" /></a>
 						
 						<div class="fea_inner">
 							<ul>
@@ -200,7 +200,7 @@ As an extension of our service, we are offering the most skilled, reliable onlin
 						</div>
 					</div>
 					<div class="fea_box_data">
-						<h2> <a href="womens.php?cat_id=6&category_type=blouse" > BLOUSE STITCHING-INQUIRY NOW!</a></h2>
+						<h2> <a href="mens.php?cat_id=3&category_type=top" > SHIRT STITCHING-INQUIRY NOW!</a></h2>
 						<div class="fea_reating">
 							<ul>
 									
@@ -213,7 +213,7 @@ As an extension of our service, we are offering the most skilled, reliable onlin
 			<div class="col-md-3 col-sm-4 col-xs-12 w-100 wow fadeInUp" data-wow-delay="0.2s">
 				<div class="fea_box top_30">
 					<div class="fea_box_img">
-						<a href="" class="fea_overlay"><img src="images/feature/gown-stitching-265x364.jpg" alt="tailor-feature-2"  class="img-responsive" /></a>
+						<a href="" class="fea_overlay"><img src="images/feature/Pant.jpg" alt="tailor-feature-2"  class="img-responsive" /></a>
 						<div class="fea_inner">
 							<ul>
 								
@@ -221,7 +221,9 @@ As an extension of our service, we are offering the most skilled, reliable onlin
 						</div>
 					</div>
 					<div class="fea_box_data">
-						<h2><a href="womens.php?cat_id=3&category_type=top">GOWN STITCHING-INQUIRY NOW!</h2>
+					<h2><a href="?cat_id=3&sub_cat_id=1&category_type=top">PANT STITCHING-INQUIRY NOW!</h2>
+
+						<!-- <h2><a href="womens.php?cat_id=3&category_type=top">PANT STITCHING-INQUIRY NOW!</h2> -->
 						<div class="fea_reating">
 							<ul>
 								<!-- <li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -238,7 +240,7 @@ As an extension of our service, we are offering the most skilled, reliable onlin
 			<div class="col-md-3 col-sm-4 col-xs-12 w-100 wow fadeInUp" data-wow-delay="0.3s">
 				<div class="fea_box top_30">
 					<div class="fea_box_img">
-						<a href="" class="fea_overlay"><img src="images/feature/kurti-stitching-265x364.jpg" alt="tailor-feature-3"  class="img-responsive" /></a>
+						<a href="" class="fea_overlay"><img src="images/feature/kurtu.jpg" alt="tailor-feature-3"  class="img-responsive" /></a>
 						<div class="fea_inner">
 							<ul>
 								
@@ -246,7 +248,7 @@ As an extension of our service, we are offering the most skilled, reliable onlin
 						</div>
 					</div>
 					<div class="fea_box_data">
-						<h2><a href="womens.php?cat_id=4&category_type=top">KURTI STITCHING-INQUIRY NOW!</h2>
+						<h2><a href="mens.php?cat_id=10&category_type=top and bottom">KURTA PAJAMA STITCHING-INQUIRY ...</h2>
 						<div class="fea_reating">
 							<ul>
 								<!-- <li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -263,7 +265,7 @@ As an extension of our service, we are offering the most skilled, reliable onlin
 			<div class="col-md-3 col-sm-4 col-xs-12 w-100 wow fadeInUp" data-wow-delay="0.1s">
 				<div class="fea_box ">
 					<div class="fea_box_img">
-						<a href="" class="fea_overlay"><img src="images/feature/suits-stitching-265x364.jpg" alt="tailor-feature-1"  class="img-responsive" /></a>
+						<a href="" class="fea_overlay"><img src="images/feature/suit.jpg" alt="tailor-feature-1"  class="img-responsive" /></a>
 						
 						<div class="fea_inner">
 							<ul>
@@ -272,7 +274,7 @@ As an extension of our service, we are offering the most skilled, reliable onlin
 					</div>
 					
 					<div class="fea_box_data">
-						<h2> <a href="womens.php?cat_id=5&category_type=top" > SUIT STITCHING-INQUIRY NOW!</a></h2>
+						<h2> <a href="mens.php?cat_id=11&category_type=top" > SUIT STITCHING-INQUIRY NOW!</a></h2>
 						<div class="fea_reating">
 							<ul>
 									

@@ -71,12 +71,12 @@ Version: 1.0.0
 			<div class="col-md-12 col-xs-12 text-center wow fadeInUp" data-wow-delay="0.1s">
 				<div class="tl_banner_wrapper">
 					<div class="page_heading wow fadeInLeft" data-wow-delay="0.2s">
-						<h1>Womens collection</h1>
+						<h1>man's collection</h1>
 					</div>
 					<div class="breadcrumbs wow fadeInRight" data-wow-delay="0.2s">
 						<ul>
 							<li><a href="index.php">Home</a></li>
-							<li>Womens</li>
+							<li>men's</li>
 						</ul>
 					</div>
 				</div>
@@ -85,12 +85,12 @@ Version: 1.0.0
 	</div>
 </div>
 <!-- breadcrumb section End -->
-<!-- Mens section Start -->
+<!-- womens section Start -->
 <div class="main_section section_07">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-sm-12 col-xs-12">
-				<div class="mens_section_wrap">
+				<div class="womens_section_wrap">
 					<div class="row">
 						<?php
 							$style="style";
@@ -101,7 +101,7 @@ Version: 1.0.0
 							?>
 
 						
-							<a href="womens.php?cat_id=<?php echo $_GET['cat_id'];?>&sub_cat_id=<?php echo $sub_cat_row['subcategory_id'];?>" class="sub-cat" ><?php echo $sub_cat_row['subcategory_name'];?></a>
+							<a href="mens.php?cat_id=<?php echo $_GET['cat_id'];?>&sub_cat_id=<?php echo $sub_cat_row['subcategory_id'];?>" class="sub-cat" ><?php echo $sub_cat_row['subcategory_name'];?></a>
 						
 								
 									
@@ -115,14 +115,14 @@ Version: 1.0.0
 								?>
 
 						
-							<a href="womens.php?cat_id=<?php echo $_GET['cat_id'];?>&sub_cat_id=<?php echo $sub_cat_row['subcategory_id'];?>" class="sub-cat" ><?php echo $sub_cat_row['subcategory_name'];?></a>
+							<a href="mens.php?cat_id=<?php echo $_GET['cat_id'];?>&sub_cat_id=<?php echo $sub_cat_row['subcategory_id'];?>" class="sub-cat" ><?php echo $sub_cat_row['subcategory_name'];?></a>
 						
 								
 									
 						<?php			
 						}
 						?>
-						<a href="womens.php?cat_id=<?php echo $_GET['cat_id'];?>&sub_cat_id=<?php echo $sub_cat_row['subcategory_id'];?>" class="sub-cat" >Add Ons</a>
+						<a href="mens.php?cat_id=<?php echo $_GET['cat_id'];?>&sub_cat_id=<?php echo $sub_cat_row['subcategory_id'];?>" class="sub-cat" >Add Ons</a>
 						
 						<a href="special.php">Special Instructions</a>
 						
@@ -439,7 +439,7 @@ Version: 1.0.0
 		</div>
 	</div>
 </div>
-<!-- Mens section End -->
+<!-- womens section End -->
 <!-- Footer Start -->
 <?php include_once "footer.php"; ?>
 

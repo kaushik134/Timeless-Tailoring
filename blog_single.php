@@ -102,7 +102,7 @@ Version: 1.0.0
 	</div>
 </div>
 <!-- breadcrumb section End -->
-<!-- Mens section Start -->
+<!-- womens section Start -->
 <div class="main_section section_07">
 	<div class="container">
 		<div class="row">
@@ -349,7 +349,7 @@ Version: 1.0.0
 		</div>
 	</div>
 </div>
-<!-- Mens section End -->
+<!-- womens section End -->
 <!-- Footer Start -->
 <?php include_once "index.php"; ?>
 <!-- Footer End -->

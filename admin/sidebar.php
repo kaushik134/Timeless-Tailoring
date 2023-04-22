@@ -77,21 +77,21 @@
 
                <li class=" nav-item"><a href="#"><i class="bx bx-plus"></i><span class="menu-title text-truncate" data-i18n="Invoice">Add Ons</span></a>
             <ul class="menu-content">
-              <li><a class="d-flex align-items-center" href="addons.php"><i class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate" data-i18n="Invoice List">Add Ons List</span></a>
-              </li>
+              <!-- <li><a class="d-flex align-items-center" href="addons.php"><i class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate" data-i18n="Invoice List">Add Ons List</span></a>
+              </li> -->
               <li><a class="d-flex align-items-center" href="lining_list.php"><i class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate" data-i18n="Invoice List">Lining List</span></a>
               </li>
-              <li><a class="d-flex align-items-center" href="tassles_list.php"><i class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate" data-i18n="Invoice List">Tassles List</span></a>
+              <!-- <li><a class="d-flex align-items-center" href="tassles_list.php"><i class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate" data-i18n="Invoice List">Tassles List</span></a> -->
               </li>
-              <li><a class="d-flex align-items-center" href="cups_list.php"><i class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate" data-i18n="Invoice List">Cups List</span></a>
+              <!-- <li><a class="d-flex align-items-center" href="cups_list.php"><i class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate" data-i18n="Invoice List">Cups List</span></a>
+              </li> -->
+              <!-- <li><a class="d-flex align-items-center" href="piping_list.php"><i class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate" data-i18n="Invoice List">Piping List</span></a> -->
               </li>
-              <li><a class="d-flex align-items-center" href="piping_list.php"><i class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate" data-i18n="Invoice List">Piping List</span></a>
-              </li>
-              <li><a class="d-flex align-items-center" href="work_list.php"><i class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate" data-i18n="Invoice List">Work List</span></a>
+              <!-- <li><a class="d-flex align-items-center" href="work_list.php"><i class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate" data-i18n="Invoice List">Work List</span></a> -->
               </li>
                </ul>
 			   
-			         <li class=" nav-item"><a href="special_instructions_ad.php"><i class="bx bx-list-check"></i><span class="menu-title text-truncate" data-i18n="Invoice">Special Instruction</span></a>
+			         <!-- <li class=" nav-item"><a href="special_instructions_ad.php"><i class="bx bx-list-check"></i><span class="menu-title text-truncate" data-i18n="Invoice">Special Instruction</span></a> -->
             <ul class="menu-content">
               <li><a class="d-flex align-items-center" href="special_instructions_ad.php"><i class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate" data-i18n="Invoice List">Special Instruction List</span></a>
                 

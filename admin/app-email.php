@@ -121,7 +121,8 @@
                             </div>
                           </div>
                         </div>
-                      </div></a><a class="d-flex justify-content-between cursor-pointer" href="javascript:void(0);">
+                      </div></a>
+                      <a class="d-flex justify-content-between cursor-pointer" href="javascript:void(0);">
                       <div class="media d-flex align-items-center">
                         <div class="media-left pr-0">
                           <div class="avatar bg-primary bg-lighten-5 mr-1 m-0 p-25"><span class="avatar-content text-primary font-medium-2">LD</span></div>

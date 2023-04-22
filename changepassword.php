@@ -213,8 +213,8 @@ body{
            
             
   
-       <!--  <div class="avatar-upload">
-        <?php //if(isset($_GET['upe_id'])){ ?>
+       <div class="avatar-upload">
+        <?php if(isset($_GET['upe_id'])){ ?>
         
            <div class="avatar-edit">
           
@@ -226,12 +226,12 @@ body{
             <div id="imagePreview" style="background-image: url(assets/img/<?php echo $imgVendorSet;?>);">
             </div>
           </div>
-          <?php //}else{  
+          <?php }else{  
           ?>
           
-          <?php //} ?>
+          <?php } ?>
         </div>
-        --> 
+  
     
                     <div class="mt-3">
                       <h4><?php echo $row['customer_name']?></h4>

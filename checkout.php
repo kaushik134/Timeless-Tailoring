@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<?php 
+<?php
 session_start();
 require_once "connect.php";
-if(!isset($_SESSION['uid']))
-{
+if (!isset($_SESSION['uid'])) {
 	header('location:login.php');
 }
-$name=$email=$number=$add=$pin=$city='';
-if(isset($_GET['my_id'])){
-  $qury=mysqli_query($cnn,"select * from customer_tbl where customer_id='".$_GET['my_id']."'");
-  $row=mysqli_fetch_assoc($qury);
-  $name=$row['customer_name'];
-  $email=$row['email'];
-  $number=$row['contact'];
-  $add=$row['address'];
-  $city=$row['city'];
-  $pin=$row['pincode'];
-  
+$name = $email = $number = $add = $pin = $city = '';
+if (isset($_GET['my_id'])) {
+	$qury = mysqli_query($cnn, "select * from customer_tbl where customer_id='" . $_GET['my_id'] . "'");
+	$row = mysqli_fetch_assoc($qury);
+	$name = $row['customer_name'];
+	$email = $row['email'];
+	$number = $row['contact'];
+	$add = $row['address'];
+	$city = $row['city'];
+	$pin = $row['pincode'];
+
 }
 ?>
 <!-- 
@@ -30,7 +29,7 @@ Version: 1.0.0
 <!-- <![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-	<title>Checkout | <?php echo $title;?></title>
+	<title>Checkout | <?php echo $title; ?></title>
 	<meta charset="utf-8" />
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<meta name="description" content="Tailor Html Template" />
@@ -78,7 +77,7 @@ Version: 1.0.0
 	</div>
 </div>
 <!-- breadcrumb section End -->
-<!-- Mens section Start -->
+<!-- womens section Start -->
 <div class="main_section section_07 tl_checkout_wrapper">
 	<div class="container">
 		<div class="row">
@@ -87,57 +86,57 @@ Version: 1.0.0
 				  <ul id="progressbar">
 						<li class="active">Billing Details</li>  
 					</ul>
-					<?php 
+					<?php
 					include_once('connect.php');
-					 if(isset($_POST['stbn']))
-					 	//echo $str; die;
-					 {
-					 	$qry="insert into delivery_tbl values(NULL,'".$_POST['name']."','".$_POST['email']."','".$_POST['contact']."','".$_POST['address']."','".$_POST['city']."','".$_POST['pincode']."')";
-					 	//echo $qry; die;
-					 	 mysqli_query($cnn,$qry);
-					 	 $last_delivery_id=mysqli_insert_id($cnn);
-					 	 $_SESSION['last_delivery_id']=$last_delivery_id;
-					 	  echo '<script type="text/javascript">';
-							echo 'window.location.href="payment.php?my_id='.$_SESSION['uid'].'"';
-							echo '</script>';
-					 	//header('location:payment.php');
-					 }
+					if (isset($_POST['stbn']))
+					//echo $str; die;
+					{
+						$qry = "insert into delivery_tbl values(NULL,'" . $_POST['name'] . "','" . $_POST['email'] . "','" . $_POST['contact'] . "','" . $_POST['address'] . "','" . $_POST['city'] . "','" . $_POST['pincode'] . "')";
+						//echo $qry; die;
+						mysqli_query($cnn, $qry);
+						$last_delivery_id = mysqli_insert_id($cnn);
+						$_SESSION['last_delivery_id'] = $last_delivery_id;
+						echo '<script type="text/javascript">';
+						echo 'window.location.href="payment.php?my_id=' . $_SESSION['uid'] . '"';
+						echo '</script>';
+						//header('location:payment.php');
+					}
 					?>
 					<div class="woocommerce_billing step">
 						<div class="row">
 							<form id="custom_val" method="POST">
 							<div class="col-lg-6 col-md-6" >
 								<div class="form-group">
-									<input type="text" value="<?php echo $name?>" required
+									<input type="text" value="<?php echo $name ?>" required
 									name="name" id="name" placeholder="Name*" class="form-control">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6" >
 								<div class="form-group">
-									<input type="text" value="<?php echo $email?>"required name="email" id="email"  placeholder="Email*" class="form-control">
+									<input type="text" value="<?php echo $email ?>"required name="email" id="email"  placeholder="Email*" class="form-control">
 								</div>
 							</div> 
 							<div class="col-lg-6 col-md-6 wow fadeInLeft">
 								<div class="form-group">
-									<input type="text" value="<?php echo $number?>" required
+									<input type="text" value="<?php echo $number ?>" required
 									name="contact" id="contact" placeholder="Phone*" class="form-control">
 								</div>
 							</div>
 							<div class="col-lg-12 col-md-12 wow fadeInUp">
 								<div class="form-group">
 									<textarea placeholder="Address*"  required
-									name="address" id="address" class="form-control"><?php echo $add?></textarea>
+									name="address" id="address" class="form-control"><?php echo $add ?></textarea>
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 wow fadeInRight" >
 								<div class="form-group">
 									<input type="text" required
-									 name="city" id="city" placeholder="City*" value="<?php echo $city?>" class="form-control">
+									 name="city" id="city" placeholder="City*" value="<?php echo $city ?>" class="form-control">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 wow fadeInRight" >
 								<div class="form-group">
-									<input type="number" value="<?php echo $pin?>" required
+									<input type="number" value="<?php echo $pin ?>" required
 									name="pincode" id="pincode" placeholder="Pincode*" class="form-control">
 								</div>
 							</div>
@@ -152,11 +151,11 @@ Version: 1.0.0
 							<!-- </label> -->
 							</div> 
 							<div>
-                                        <input type="submit" 
-                                        class="btn btn-primary" 
-                                        name="stbn" 
-                                        value="Submit">
-                                        <div class="response"></div> 
+										<input type="submit" 
+										class="btn btn-primary" 
+										name="stbn" 
+										value="Submit">
+										<div class="response"></div> 
 						</div>
 					</form>
 						</div>
@@ -171,7 +170,7 @@ Version: 1.0.0
 		</div>
 	</div>
 </div>
-<!-- Mens section End -->
+<!-- womens section End -->
 <!-- Footer Start -->
 <?php include_once "footer.php"; ?>
 <!-- Footer End -->
@@ -221,83 +220,83 @@ Version: 1.0.0
 <script src="admin/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
 
 <script type="text/javascript">
-      $(document).ready(function() {
-          $("#custom_val").validate({
-                rules: {
+	  $(document).ready(function() {
+		  $("#custom_val").validate({
+				rules: {
 					name: {
-                        required: true,
+						required: true,
 						minlength: 3,
 						maxlength: 15,
-                        lettersonly: true 
-                      
-                    },
+						lettersonly: true 
+					  
+					},
 					email: {
-                        required: true,
+						required: true,
 						minlength: 13,
 						maxlength: 35
-                    },
+					},
 					contact: {
-                        required: true,
+						required: true,
 						numbersonly: true,
 						minlength :10,
 						maxlength :15
-                      
-                    },
+					  
+					},
 					city: {
-                        required: true,
+						required: true,
 						maxlength: 15,
 						minlength :4
-                    },
+					},
 					pincode: {
-                        required: true,
+						required: true,
 						numbersonly: true,
 						minlength :6,
 						maxlength: 7
-                    },
+					},
 					
 					address: {
-                        required: true,
+						required: true,
 						minlength: 3,
 						maxlength: 50
-                      
-                    },
-                    }
-                });
-                messages : {
-                      name: {
-                      required: "Name should be at least 3 characters"
-                    }
-                }
-         
-          });
-      jQuery.validator.addMethod("lettersonly", function(value, element) {
-        return this.optional(element) || /^[a-z\s]+$/i.test(value);
-    }, "Only alphabetical characters");
+					  
+					},
+					}
+				});
+				messages : {
+					  name: {
+					  required: "Name should be at least 3 characters"
+					}
+				}
+		 
+		  });
+	  jQuery.validator.addMethod("lettersonly", function(value, element) {
+		return this.optional(element) || /^[a-z\s]+$/i.test(value);
+	}, "Only alphabetical characters");
 	
 	jQuery.validator.addMethod("numbersonly", function(value, element) {
-        return this.optional(element) || /^[0-9]+$/.test(value);
-    }, "Only postive digits");
+		return this.optional(element) || /^[0-9]+$/.test(value);
+	}, "Only postive digits");
 
-      jQuery.extend(jQuery.validator.messages, {
-          required: "This field is required.",
-          // remote: "Please fix this field.",
-          // email: "Please enter a valid email address.",
-          // url: "Please enter a valid URL.",
-          // date: "Please enter a valid date.",
-          // dateISO: "Please enter a valid date (ISO).",
-          // number: "Please enter a valid number.",
-          // digits: "Please enter only digits.",
-          // creditcard: "Please enter a valid credit card number.",
-          // equalTo: "Please enter the same value again.",
-          //accept: "please enter valid image file type (png,jpg,jpeg).",
-          // maxlength: jQuery.validator.format("Please enter no more than {0} characters."),
-          // minlength: jQuery.validator.format("Please enter at least {0} characters."),
-          // rangelength: jQuery.validator.format("Please enter a value between {0} and {1} characters long."),
-          // range: jQuery.validator.format("Please enter a value between {0} and {1}."),
-          // max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
-          // min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
-      });
-    </script>
+	  jQuery.extend(jQuery.validator.messages, {
+		  required: "This field is required.",
+		  // remote: "Please fix this field.",
+		  // email: "Please enter a valid email address.",
+		  // url: "Please enter a valid URL.",
+		  // date: "Please enter a valid date.",
+		  // dateISO: "Please enter a valid date (ISO).",
+		  // number: "Please enter a valid number.",
+		  // digits: "Please enter only digits.",
+		  // creditcard: "Please enter a valid credit card number.",
+		  // equalTo: "Please enter the same value again.",
+		  //accept: "please enter valid image file type (png,jpg,jpeg).",
+		  // maxlength: jQuery.validator.format("Please enter no more than {0} characters."),
+		  // minlength: jQuery.validator.format("Please enter at least {0} characters."),
+		  // rangelength: jQuery.validator.format("Please enter a value between {0} and {1} characters long."),
+		  // range: jQuery.validator.format("Please enter a value between {0} and {1}."),
+		  // max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
+		  // min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
+	  });
+	</script>
 </body>
 <!--body end -->
 </html>

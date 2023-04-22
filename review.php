@@ -1,6 +1,6 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <?php 
-session_start();
 require_once "connect.php";
 ?>
 <!-- 
@@ -64,14 +64,23 @@ Version: 1.0.0
 				<div class="table-responsive cart_table wow fadeInRight" data-wow-delay="0.2s">
 				
 				<?php
-				if(isset($_POST['send']))
-			{
+				// if(isset($_POST['send'])):
+			if (isset($_POST['action'])) :
+			
 				$ser_date=date("Y-m-d H:i:s");
 				$str="insert into review_tbl values(NULL,'".$_SESSION['uid']."','".$_GET['order_id']."','".$_POST['msg']."','".$_POST['rating']."','$ser_date','0')"; 
-				//echo $str;die;
-				$success=mysqli_query($cnn,$str);
-				header('location:index.php');
+				// $success=mysqli_query();
+				if (mysqli_query($cnn,$str)) {
+				// if($success){
+					// header('location:index.php?');
+					?>
+					<script>
+						window.location.href = "http://localhost/website/index.php";
+					</script>
+					<?php
+				// }
 			}
+			endif;
 				?>
 				
 						<div class="col-md-12">
@@ -83,7 +92,7 @@ Version: 1.0.0
                          <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> 
                          <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> 
                          <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> 
-                         <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label> 
+                         <input type="radio" name="rating" value="1" id="1" checked><label for="1">☆</label> 
                      </div>  
                     </div>
                     <br>
@@ -99,7 +108,8 @@ Version: 1.0.0
 	                            </div>
 <br>
 	                            <div class="form-group">
-	                            	<input type="submit" class="btn btn-info" value="SEND" name="send" id="attending_btn" style="height:40px;width:100px">
+	                            	<input type="submit" class="proceed_btn t_btn" value="SEND" name="action" id="attending_btn" style="height:40px;width:100px">
+									<!-- <a href="" class="proceed_btn t_btn" name="send">SEND</a> -->
 	                            </div>
                         	</form>
 			     </div>

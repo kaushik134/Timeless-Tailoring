@@ -277,7 +277,7 @@ Our easy-to-understand website and extremely reachable customer care services wi
 				<!-- Description -->
 				<div class="hero_desc">
 					<div class="hero_desc_inner">
-						<h1>Online Custom Tailoring & Sewing Services for Women</h1>
+						<h1>Online Custom Tailoring </h1>
 						<p>
 							In this digital age, the way we live is changing and so is the way we relate to fashion. We are becoming more conscious about what’s good for us, and our clothes are now an extension of our unique personality. So if you’ve been wondering how your wardrobe can be better, we recommend that you stitch clothes online as per your designs, taste and, most importantly, fit. And we are here to offer our services as an online stitching site that understands fashion and customers’ need because of our many years in the online retail business.
 							<br>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php 
+<?php
 session_start();
 require_once "connect.php";
 
@@ -15,7 +15,7 @@ Version: 1.0.0
 <!-- <![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-	<title>Subcategory | <?php echo $title;?></title>
+	<title>Subcategory | <?php echo $title; ?></title>
 	<meta charset="utf-8" />
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<meta name="description" content="Tailor Html Template" />
@@ -60,12 +60,12 @@ Version: 1.0.0
 			<div class="col-md-12 col-xs-12 text-center wow fadeInUp" data-wow-delay="0.1s">
 				<div class="tl_banner_wrapper">
 					<div class="page_heading wow fadeInLeft" data-wow-delay="0.2s">
-						<h1>Womens collection</h1>
+						<h1>man's collection</h1>
 					</div>
 					<div class="breadcrumbs wow fadeInRight" data-wow-delay="0.2s">
 						<ul>
 							<li><a href="index.php">Home</a></li>
-							<li>Womens</li>
+							<li>men's</li>
 						</ul>
 					</div>
 				</div>
@@ -74,59 +74,56 @@ Version: 1.0.0
 	</div>
 </div>
 <!-- breadcrumb section End -->
-<!-- Mens section Start -->
+<!-- womens section Start -->
 <div class="main_section section_07">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-sm-12 col-xs-12">
-				<div class="mens_section_wrap">
+				<div class="womens_section_wrap">
 					<div class="row">
 
-						<?php 
-						if(isset($_GET['cat_id']))
-						{
-							$qry="select * from style_tbl where category_id='".$_GET['cat_id']."'";
+						<?php
+						if (isset($_GET['cat_id'])) {
+							$qry = "select * from style_tbl where category_id='" . $_GET['cat_id'] . "'";
+						} else {
+							$qry = "select * from style_tbl";
 						}
-						else {
-							$qry="select * from style_tbl";
-						}
-						
-						$test=mysqli_query($cnn,$qry);
-						while($result=mysqli_fetch_array($test))
-						{
-						?>
+
+						$test = mysqli_query($cnn, $qry);
+						while ($result = mysqli_fetch_array($test)) {
+							?>
 
 
 
-						<div class="col-md-6 col-sm-6 col-xs-12 w-100 wow fadeInUp" data-wow-delay="0.2s">
-							<div class="fea_box">
-								<div class="fea_box_img">
-									<a href="" class="fea_overlay"><img src="../../threadsmith/admin/profiles/<?php echo $result['style_image'];?>" alt="image"  class="img-responsive" /></a>
-									<span class="sale">Sale!</span>  
-									<div class="fea_inner">
-										<ul>
-											<li class="first_li"><a href="product_details.html"><i class="fa fa-search" aria-hidden="true"></i><div class="toltip_div"><p class="toltip">Quick View</p></div></a></li>
-											<li class="second_li"><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i><div class="toltip_div"><p class="toltip">Add Cart</p></div></a></li>
-											<li class="third_li"><a href=""><i class="fa fa-heart" aria-hidden="true"></i><div class="toltip_div"><p class="toltip">Add Wishlist</p></div></a></li>
-											<li class="fourth_li"><a href=""><i class="fa fa-random" aria-hidden="true"></i><div class="toltip_div"><p class="toltip">Compare</p></div></a></li>
-										</ul>
+							<div class="col-md-6 col-sm-6 col-xs-12 w-100 wow fadeInUp" data-wow-delay="0.2s">
+								<div class="fea_box">
+									<div class="fea_box_img">
+										<a href="" class="fea_overlay"><img src="../../threadsmith/admin/profiles/<?php echo $result['style_image']; ?>" alt="image"  class="img-responsive" /></a>
+										<span class="sale">Sale!</span>  
+										<div class="fea_inner">
+											<ul>
+												<li class="first_li"><a href="product_details.html"><i class="fa fa-search" aria-hidden="true"></i><div class="toltip_div"><p class="toltip">Quick View</p></div></a></li>
+												<li class="second_li"><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i><div class="toltip_div"><p class="toltip">Add Cart</p></div></a></li>
+												<li class="third_li"><a href=""><i class="fa fa-heart" aria-hidden="true"></i><div class="toltip_div"><p class="toltip">Add Wishlist</p></div></a></li>
+												<li class="fourth_li"><a href=""><i class="fa fa-random" aria-hidden="true"></i><div class="toltip_div"><p class="toltip">Compare</p></div></a></li>
+											</ul>
+										</div>
 									</div>
-								</div>
-								<div class="fea_box_data">
-									<h2><a href="#"><?php echo $result['style_name']; ?></a></h2>
-									<div class="fea_reating">
-										<ul>
-											<li><i class="fa fa-star" aria-hidden="true"></i></li>
-											<li><i class="fa fa-star" aria-hidden="true"></i></li>
-											<li><i class="fa fa-star" aria-hidden="true"></i></li>
-											<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-											<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-										</ul>
+									<div class="fea_box_data">
+										<h2><a href="#"><?php echo $result['style_name']; ?></a></h2>
+										<div class="fea_reating">
+											<ul>
+												<li><i class="fa fa-star" aria-hidden="true"></i></li>
+												<li><i class="fa fa-star" aria-hidden="true"></i></li>
+												<li><i class="fa fa-star" aria-hidden="true"></i></li>
+												<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+												<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+											</ul>
+										</div>
+										<span>$<?php echo $result['style_price']; ?></span>
 									</div>
-									<span>$<?php echo $result['style_price']; ?></span>
 								</div>
 							</div>
-						</div>
 
 						<?php } ?>
 
@@ -452,7 +449,7 @@ Version: 1.0.0
 		</div>
 	</div>
 </div>
-<!-- Mens section End -->
+<!-- womens section End -->
 <!-- Footer Start -->
 <?php include_once "footer.php"; ?>
 

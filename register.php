@@ -13,7 +13,13 @@ if(isset($_POST['sbtn']))
     $str="insert into customer_tbl values(NUll,'".$_POST['fname']."','".$_POST['email']."','".$_POST['password']."','".$_POST['phone']."','".$_POST['address']."','".$_POST['city']."','".$_POST['pincode']."','".$register_date."','".$customer_status."')";
     //echo $str;die;
     $register_success=mysqli_query($cnn,$str);
+
+if($register_success):
+  $_SESSION['uid']=$row['customer_id'];
+  $_SESSION['umail']=$row['email'];
+  $_SESSION['uname']=$row['customer_name'];
     header('location:index.php');
+endif;
     ?>
    <script>
     swal({

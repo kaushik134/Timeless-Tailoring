@@ -105,8 +105,14 @@ $cname='';
     {
         $status="1";
         $qry2="insert into special_instructions_tbl values(NULL,'".$my_id."','".$cat_id."','".$_POST['instruction']."','".$status."')";
-        mysqli_query($cnn,$qry2);
-        header('location:cart.php');
+        if(mysqli_query($cnn,$qry2)){
+            ?>
+            <script>
+            window.location.href = "http://localhost/website/cart.php";
+        </script>
+        <?php
+        }
+        // header('location:cart.php');
         //echo $qry2;die;
     }
 ?>
