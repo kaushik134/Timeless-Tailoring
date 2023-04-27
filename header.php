@@ -89,9 +89,7 @@
 								<li>
 									<a href="contact.php">Contact</a>
 								</li>
-								<li>
-									<a href="cart.php">MyCart</a>
-								</li>
+								
 
 
 								<?php

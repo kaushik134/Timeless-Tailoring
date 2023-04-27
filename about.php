@@ -81,7 +81,7 @@ Version: 1.0.0
 				<div class="about_description">
 					<h1>We provide you with great suits that benefit you and your lifestyle</h1>
 					<br>
-					<p> Your search for the ideal online stitching service ends right here at timelesstailoring3102.com. Having provided exceptional 
+					<p> Your search for the ideal online stitching service ends right here at www.atimeless.com. Having provided exceptional 
 					ethnic fashion through the digital space to our treasured customers over the years, we have come to understand your fashion needs better. 
 					As an extension of our service, we are offering the most skilled, reliable online tailoring service to help you realise your style goals. 
 					Our highly professional and, at the same time, customer-centric approach will help you have a pleasant experience in getting customised fashion.</p>
@@ -181,7 +181,7 @@ Version: 1.0.0
 						<div class="col-md-6">
 							<div class="crousel_caption">
 								<p>
-								Custom stitch Saree Blouse, Salwar Suits, Anarkali Suits, Kurti Top, Lehenga and ethnic Bottomwear in styles and fit that complement you perfectly! 
+								Custom stitch Shirt , Suits, Sherwani, Kurta in styles and fit that complement you perfectly! 
 When you choose to stitch clothes that suit you, both personality and fit-wise, you end up with the most amazing set of clothes that speak to your style! 
 Our easy-to-understand website and extremely reachable customer care services will guide you step-by-step in fulfilling that dream custom-stitched collection of outfits.								</p>
 							</div>
@@ -269,7 +269,7 @@ Our easy-to-understand website and extremely reachable customer care services wi
 			
 				<!-- thumb -->
 				<div class="hero_thumb wow fadeInRight" data-wow-delay="0.2s">
-					<img src="images/about/Bridal-lehenga-set.jpg" alt="thumb"  class="img-responsive" />
+					<img src="images/about/k3.jpg" alt="thumb"  class="img-responsive" />
 				</div>
 				<!-- thumb -->
 			
@@ -283,13 +283,13 @@ Our easy-to-understand website and extremely reachable customer care services wi
 							<br>
 							<center><b><h3>What can you stitch at timeless tailoring?</h3></b></center>
 							<br>
-							1. Stitch salwar kameez online that are flattering to your body type and in patterns/designs that you adore.
+							1. Stitch Shirt online that are flattering to your body type and in patterns/designs that you adore.
 							<br>
-							2. Stitch saree blouses online inspired by your favourite celebrity style and feel one among the stars.
+							2. Stitch Suit online inspired by your favourite celebrity style and feel one among the stars.
 							<br>
-							3. Stitch ethnic bottomwear online that are unique and are customised to your comfort and style.
+							3. Stitch Kurta & Pajama online that are unique and are customised to your comfort and style.
 							<br>
-							4. Stitch kurtis online for both casual occasions as well as fancy parties and enjoy the best of ethnicwear on a daily basis.
+							4. Stitch Sherwani for both casual occasions as well as fancy parties and enjoy the best of ethnicwear on a daily basis.
 						</p>
 					</div>
 				</div>
